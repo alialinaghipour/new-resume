@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="fa">
+
+<head>
+    <partial name="_AdminHeaderReferencesPartial" />
+    @await RenderSectionAsync("Style", false)
+</head>
+
+<body class="hold-transition skin-info-light fixed sidebar-mini rtl">
+
+    <div class="wrapper">
+
+        <partial name="_AdminHeaderPartial" />
+        <partial name="_AdminSidebarPartial" />
+
+
+        <div class="content-wrapper">
+            @RenderBody()
+        </div>
+
+        <partial name="_ModalsPartial" />
+
+        <div class="control-sidebar-bg"></div>
+
+    </div>
+
+    <partial name="_AdminFooterReferencesPartial" />
+    <partial name="_MessagePartial" />
+
+@await RenderSectionAsync("AdminScripts",false)
+
+</body>
+
+</html>

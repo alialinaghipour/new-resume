@@ -1,0 +1,47 @@
+﻿@model WorkSampleIndexViewModel
+@{
+    ViewData["Title"] = "WorkSamples";
+}
+
+
+<div class="section mt-0">
+    <h1 class="title title--h1 title__separate">نمونه کارها</h1>
+</div>
+
+@if (Model.WorkSampleCategories.Any())
+{
+    <div class="select section">
+        <span class="placeholder">دسته را انتخاب کنید</span>
+        <ul class="filter">
+            <li class="filter__item">دسته</li>
+            <li class="filter__item active" data-filter="*"><a class="filter__link active" href="#filter">همه</a></li>
+            @foreach (var item in Model.WorkSampleCategories)
+            {
+                <li class="filter__item" data-filter=".category-@item.Id"><a class="filter__link" href="#filter">@item.Title</a></li>
+            }
+        </ul>
+        <input type="hidden" name="changemetoo">
+    </div>
+}
+
+@if (Model.WorkSamples.Any())
+{
+
+    <div class="gallery-grid js-grid js-filter-container">
+        <div class="gutter-sizer"></div>
+
+        @foreach (var item in Model.WorkSamples)
+        {
+            <figure class="gallery-grid__item category-@item.CategoryId">
+                <div class="gallery-grid__image-wrap">
+                    <img class="gallery-grid__image cover lazyload" src="@($"{FilePaths.WorkSample}{item.Image}")" data-zoom="" alt="@item.ImageAlt">
+                </div>
+                <figcaption class="gallery-grid__caption">
+                    <h4 class="title title--h4 gallery-grid__title"><a href="@(!string.IsNullOrEmpty(item.Link)? item.Link : "#")">@item.Title</a></h4>
+                    <span class="gallery-grid__category">@item.Id</span>
+                </figcaption>
+            </figure>
+        }
+
+    </div>
+}

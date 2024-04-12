@@ -1,0 +1,16 @@
+﻿@model List<GetSkillsViewModel>
+
+<div class="section">
+    <h2 class="title title--h2">مهارت های من</h2>
+    <div class="box-gray">
+
+        @foreach (var  skill in Model)
+        {
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="@skill.Percent" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-text"><span>@skill.Title</span><span>@skill.Percent ٪</span></div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

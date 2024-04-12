@@ -1,0 +1,13 @@
+﻿@inject IOptions<GoogleRecaptchaConfig> GoogleRecaptchaConfig;
+@{
+    var siteKey = GoogleRecaptchaConfig.Value.SiteKey;
+}
+
+<script src="https://www.google.com/recaptcha/api.js?render=@siteKey"></script>
+<script>
+    grecaptcha.ready(function() {
+        window.grecaptcha.execute('@siteKey', { action: 'home' }).then(function (token) {
+            $("#Captcha").val(token);
+        });
+    });
+</script>

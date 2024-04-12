@@ -1,0 +1,24 @@
+﻿@model List<GetWorksViewModel>
+
+<div class="section">
+    <h2 class="title title--h2">کاری که انجام می دهم</h2>
+    <div class="row">
+
+        @foreach (var work in Model)
+        {
+            <div class="col-12 col-lg-@work.ColumnLg case-item-wrap">
+
+                <div class="case-item">
+
+                    <i class="@work.Icon fa-3x mb-3"></i>
+
+                    <h3 class="title title--h3">@work.Title</h3>
+                    <p class="case-item__caption">@work.Description</p>
+
+                </div>
+
+            </div>
+        }
+
+    </div>
+</div>

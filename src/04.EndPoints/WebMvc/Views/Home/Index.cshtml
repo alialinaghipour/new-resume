@@ -1,0 +1,30 @@
+﻿@model HomeIndexViewModel
+@{
+    ViewData["Title"] = "صفحه ی اصلی";
+}
+
+
+<!-- About -->
+<div class="section mt-0">
+    <h1 class="title title--h1 title__separate">درمورد من</h1>
+    <div class="pt-2 pt-sm-3">
+        <p>علی علینقی پور هستم،اهل جنوب ایران ، تخصص اصلی برنامه نویسی بک اند و همیشه از چالش ها و درگیری های سمت بک خوشم میاد و هیج وفت از اموزش دیدن سیر نمیشم ، و هیج لذتی بالاتر این نیست علمی رو که یاد میگیرم به دیگران انتقال بدم</p>
+        <p class="mb-0">گار من اینکه بهترین خودم باشم و همیشه سعی میکنم ذهن پیچیده ی کارفرما رو به بهترین شکل به تبدیل به  نرم افزار کنم</p>
+    </div>
+</div>
+
+@if (Model.Works.Any())
+{
+    <partial name="_Works" model="@Model.Works"/>
+}
+
+@if (Model.Feedbacks.Any())
+{
+    <partial name="_Feedbacks" model="@Model.Feedbacks"/>
+}
+
+
+@if (Model.Logos.Any())
+{
+    <partial name="_CustomerLogos" model="@Model.Logos"/>
+}

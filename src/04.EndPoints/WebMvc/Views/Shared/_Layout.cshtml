@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <partial name="_MetaTag" />
+    <partial name="_Style" />
+</head>
+
+<body class="bg-triangles-2">
+
+<partial name="_Preloader" />
+
+<main class="main">
+
+    <partial name="_Menu" />
+
+    <div class="wrapper">
+
+        @await Component.InvokeAsync("SideBar")
+
+        <div class="content js-scroll">
+            @RenderBody()
+        </div>
+
+    </div>
+
+</main>
+
+<partial name="_Svg" />
+<partial name="_Scripts" />
+
+@await RenderSectionAsync("Scripts", false)
+
+</body>
+
+</html>
