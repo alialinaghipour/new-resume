@@ -11,4 +11,14 @@ public static class StringTools
     {
         return firstValue.Replace(" ", "") == secondValue.Replace(" ", "");
     }
+
+    public static string GenerateUniqCode()
+    {
+        return Guid.NewGuid().ToString("N");
+    }
+
+    public static string GetExtension(this string value)
+    {
+        return Path.GetExtension(value);
+    }
 }

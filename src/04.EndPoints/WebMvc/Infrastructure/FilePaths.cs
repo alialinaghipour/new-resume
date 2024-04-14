@@ -2,10 +2,11 @@
 
 public static class FilePaths
 {
-    public const string BaseImagePath = "/content/images/";
+    public const string BaseImagePath = "/content/images";
     public const string BaseImagePathServer = $"wwwroot{BaseImagePath}";
     public const string DefaultAvatar = $"{BaseImagePath}/default/default-avatar.png";
     public static readonly string FeedbackAvatar = $"{BaseImagePath}/customer-feedback-avatar/origin/";
+    public static readonly string FeedbackAvatarServer = Path.Combine(Directory.GetCurrentDirectory(), $"{BaseImagePath}/customer-feedback-avatar/origin/");
     public static readonly string Avatar = $"{BaseImagePath}/avatar/";
     
     #region CustomerLogo 
